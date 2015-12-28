@@ -1,0 +1,476 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css"/>
+<link rel="stylesheet" type="text/css" href="css/myicons.css"/>
+<link rel="stylesheet" type="text/css" href="css/animsition.min.css"/>
+<script src="js/jquery-2.1.4.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/jquery.mobile-1.4.5.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/jquery.animsition.min.js" type="text/javascript" charset="utf-8"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>iScroll demo: simple</title>
+
+<script type="text/javascript" src="js/myscroll.js"></script>
+
+<script type="text/javascript">
+
+var myScroll,
+	pullDownEl, pullDownOffset,
+	pullUpEl, pullUpOffset,
+	generatedCount = 0,
+    freshCount=0;
+function pullDownAction () {
+	setTimeout(function () {	// <-- Simulate network congestion, remove setTimeout from production!
+		var el, li, i;
+		el = document.getElementById('thelist');
+            freshCount++;
+//		for (i=0; i<3; i++) {
+			li = document.createElement('li');
+			var iteam=freshCount%9;
+			switch(iteam){
+				 case 1: li.className = 'ui-li-has-thumb';
+			             li.innerHTML = "<a class='ui-btn ui-btn-icon-right ui-icon-carat-r' href='detail-2.html' data-transition='slide'><img src='img/pb1.jpg' class='essay' style='width: 80px;height: 80px;'><h3>IT新秀角逐教育市场</h3><p>是什么决定我们的未来？我的回答是：互联网和教育。作为推动社会经济文化的两个核心动力.</p></a>";
+			             break;
+			     case 2: li.className = 'ui-li-has-thumb';
+			             li.innerHTML = "<a class='ui-btn ui-btn-icon-right ui-icon-carat-r' href='detail-2.html' data-transition='slide'><img src='img/pb2.jpg' class='essay' style='width: 80px;height: 80px;'><h3>HTC One A9国行售价流出 包含六种配色</h3><p>HTC One A9最近曝光率很高，主要原因是它即将发布。 继昨天曝光的真机谍照后，现在又有媒体送出了它的官方渲染图，有6个配色，其中包含了玫瑰金版本。</p></a>";
+			             break;
+			     case 3: li.className = 'ui-li-has-thumb';
+			             li.innerHTML = "<a class='ui-btn ui-btn-icon-right ui-icon-carat-r' href='detail-2.html' data-transition='slide'><img src='img/pb3.jpg' class='essay' style='width: 80px;height: 80px;'><h3>美军用Xbox手柄控制可遥控武器</h3><p>美军正在守卫塔上测试可遥控的武器，皆在减少安保士兵的数量。美军官方表示在9月25日至10月8日期间在德州布利斯堡进行评估测试，项目名称为Network Integration Evaluation 16.1 (NIE)。这些安装在守卫塔上的...[阅读更多]</p></a>";
+			             break;
+			     case 4: li.className = 'ui-li-has-thumb';
+			             li.innerHTML = "<a class='ui-btn ui-btn-icon-right ui-icon-carat-r' href='detail-2.html' data-transition='slide'><img src='img/pb4.jpg' class='essay' style='width: 80px;height: 80px;'><h3>谷歌12亿美元卖Goggle.com</h3><p>10月2日消息，谷歌近日曝出大乌龙。前Google雇员Sanmay Ved仅仅花了12美元就购买到了世界最著名的域名Google.com，虽然他拥有该域名的时间只有1分钟。谷歌闹出大纰漏 12美元就把Google.com域名卖了事件的主人公</p></a>";
+			             break;
+			     case 5: li.className = 'ui-li-has-thumb';
+			             li.innerHTML = "<a class='ui-btn ui-btn-icon-right ui-icon-carat-r' href='detail-2.html' data-transition='slide'><img src='img/pb5.jpg' class='essay' style='width: 80px;height: 80px;'><h3>IBM实现9nm碳纳米管技术新突破</h3><p>IBM研究部门表示，他们已经找到了一种方法来克服碳纳米晶体管实施上的关键障碍。该公司指出，将碳纳米晶体管缩到更小的尺寸，受限于两个方面：其一是设备沟道的大小、其二是接触面的大小。IBM表示，制作带沟道的碳纳米管是比较轻松的，但难点在于如何连...</p></a>";
+			             break;
+			     case 6: li.className = 'ui-li-has-thumb';
+			             li.innerHTML = "<a class='ui-btn ui-btn-icon-right ui-icon-carat-r' href='detail-2.html' data-transition='slide'><img src='img/pb6.jpg' class='essay' style='width: 80px;height: 80px;'><h3>Android系统两大漏洞曝光</h3><p>安全研究人士周四披露了谷歌Android移动操作系统的两大严重漏洞，这些漏洞令超过10亿台Android设备面临被黑的风险。研究人士称，这意味着“几乎每台Android设备”都会受到影响，无论其所搭载的是1.0版本Android系统还是最新...</p></a>";
+			             break;
+			     case 7: li.className = 'ui-li-has-thumb';
+			             li.innerHTML = "<a class='ui-btn ui-btn-icon-right ui-icon-carat-r' href='detail-2.html' data-transition='slide'><img src='img/pb7.jpg' class='essay' style='width: 80px;height: 80px;'><h3>苹果正式发布Watch OS 2</h3><p>网易科技讯 9月22日消息，苹果官方今日正式发布了Watch OS 2系统更新。该系统本计划在上周开放更新，但苹果公司在最后一刻宣布发现了一个关键漏洞需要修复而导致升级推迟。下载升级文件。新版本可以无线安装。据悉，Watch OS 2新增了...</p></a>";
+			             break;
+			     case 8: li.className = 'ui-li-has-thumb';
+			             li.innerHTML = "<a class='ui-btn ui-btn-icon-right ui-icon-carat-r' href='detail-2.html' data-transition='slide'><img src='img/pb8.jpg' class='essay' style='width: 80px;height: 80px;'><h3>习近平将访盖茨豪宅</h3><p>文/水原瓜子中国外交部16日宣布，国家主席习近平将于9月22日至25日对美国进行国事访问，这是习近平就任国家主席以来首次对美进行国事访问。西雅图是习大大此次访美的第一站，他将在美国大公司总部聚集的西雅图会见美国工商界并发表讲话。虽然微软创始...</p></a>";
+			             break;
+			     case 0: li.className = 'ui-li-has-thumb';
+			             li.innerHTML = "<a class='ui-btn ui-btn-icon-right ui-icon-carat-r' href='detail-2.html' data-transition='slide'><img src='img/pb9.jpg' class='essay' style='width: 80px;height: 80px;'><h3>苹果回应XcodeGhost事件：个人信息没影响</h3><p>网易科技讯 9月23日消息，上周爆发的XcodeGhost事件引发了不小的震动，上周日苹果表示正在对iOS App Store进行清理，删除其中的iPhone和iPad恶意应用。而在今日，苹果官网发布了回应全文。苹果表示一直建议开发者使用苹...</p></a>";
+			             break;        
+			}
+			
+			el.insertBefore(li, el.childNodes[2]);
+//		}
+		
+		myScroll.refresh();		// Remember to refresh when contents are loaded (ie: on ajax completion)
+	}, 1000);	// <-- Simulate network congestion, remove setTimeout from production!
+}
+
+function pullUpAction () {
+	setTimeout(function () {	// <-- Simulate network congestion, remove setTimeout from production!
+		var el, li, i;
+		el = document.getElementById('thelist');
+
+		for (i=0; i<3; i++) {
+			li = document.createElement('li');
+			li.innerHTML = 'Generated row ' + (++generatedCount);
+			el.appendChild(li, el.childNodes[0]);
+		}
+		
+		myScroll.refresh();		// Remember to refresh when contents are loaded (ie: on ajax completion)
+	}, 1000);	// <-- Simulate network congestion, remove setTimeout from production!
+}
+
+function loaded() {
+	pullDownEl = document.getElementById('pullDown');
+	pullDownOffset = pullDownEl.offsetHeight;
+	pullUpEl = document.getElementById('pullUp');	
+	pullUpOffset = pullUpEl.offsetHeight;
+	
+	myScroll = new iScroll('wrapper', {
+		useTransition: true,
+		topOffset: pullDownOffset,
+		onRefresh: function () {
+			if (pullDownEl.className.match('loading')) {
+				pullDownEl.className = '';
+				pullDownEl.querySelector('.pullDownLabel').innerHTML = 'Pull down to refresh...';
+			} else if (pullUpEl.className.match('loading')) {
+				pullUpEl.className = '';
+				pullUpEl.querySelector('.pullUpLabel').innerHTML = 'Pull up to load more...';
+			}
+		},
+		onScrollMove: function () {
+			if (this.y > 5 && !pullDownEl.className.match('flip')) {
+				pullDownEl.className = 'flip';
+				pullDownEl.querySelector('.pullDownLabel').innerHTML = 'Release to refresh...';
+				this.minScrollY = 0;
+			} else if (this.y < 5 && pullDownEl.className.match('flip')) {
+				pullDownEl.className = '';
+				pullDownEl.querySelector('.pullDownLabel').innerHTML = 'Pull down to refresh...';
+				this.minScrollY = -pullDownOffset;
+			} else if (this.y < (this.maxScrollY - 5) && !pullUpEl.className.match('flip')) {
+				pullUpEl.className = 'flip';
+				pullUpEl.querySelector('.pullUpLabel').innerHTML = 'Release to refresh...';
+				this.maxScrollY = this.maxScrollY;
+			} else if (this.y > (this.maxScrollY + 5) && pullUpEl.className.match('flip')) {
+				pullUpEl.className = '';
+				pullUpEl.querySelector('.pullUpLabel').innerHTML = 'Pull up to load more...';
+				this.maxScrollY = pullUpOffset;
+			}
+		},
+		onScrollEnd: function () {
+			if (pullDownEl.className.match('flip')) {
+				pullDownEl.className = 'loading';
+				pullDownEl.querySelector('.pullDownLabel').innerHTML = 'Loading...';				
+				pullDownAction();	// Execute custom function (ajax call?)
+			} else if (pullUpEl.className.match('flip')) {
+				pullUpEl.className = 'loading';
+				pullUpEl.querySelector('.pullUpLabel').innerHTML = 'Loading...';				
+				pullUpAction();	// Execute custom function (ajax call?)
+			}
+		}
+	});
+	
+	setTimeout(function () { document.getElementById('wrapper').style.left = '0'; }, 800);
+}
+
+document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+
+document.addEventListener('DOMContentLoaded', function () { setTimeout(loaded, 200); }, false);
+</script>
+
+<script type="text/javascript">
+    	   $(document).ready(function() {
+   
+			  $(".animsition").animsition({
+			   
+			    inClass               :   'flip-in-x-fr',
+			    outClass              :   'flip-out-x-fr',
+			    inDuration            :    1500,
+			    outDuration           :    800,
+			    linkElement           :   '.animsition-link',
+			    // e.g. linkElement   :   'a:not([target="_blank"]):not([href^=#])'
+			    loading               :    true,
+			    loadingParentElement  :   'body', //animsition wrapper element
+			    loadingClass          :   'animsition-loading',
+			    unSupportCss          : [ 'animation-duration',
+			                              '-webkit-animation-duration',
+			                              '-o-animation-duration'
+			                            ],
+			    //"unSupportCss" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+			    //The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+			     
+			    overlay               :   false,
+			     
+			    overlayClass          :   'animsition-overlay-slide',
+			    overlayParentElement  :   'body'
+			  });
+			});            
+ </script>
+<style type="text/css" media="all">
+body,ul,li {
+	padding:0;
+	margin:0;
+	border:0;
+}
+
+body {
+	font-size:12px;
+	-webkit-user-select:none;
+    -webkit-text-size-adjust:none;
+	font-family:helvetica;
+}
+
+#header {
+	position:absolute; z-index:2;
+	top:0; left:0;
+	width:100%;
+	height:50px;
+	line-height:45px;
+	/*background-color:#d51875;*/
+	/*background-image:-webkit-gradient(linear, 0 0, 0 100%, color-stop(0, #fe96c9), color-stop(0.05, #d51875), color-stop(1, #7b0a2e));*/
+	/*background-image:linear-gradient(top, #fe96c9, #d51875 5%, #7b0a2e);*/
+	/*background-image:-o-linear-gradient(top, #fe96c9, #d51875 5%, #7b0a2e);*/
+	padding:0;
+	color:#eee;
+	font-size:20px;
+	text-align:center;
+}
+
+/*#header a {
+	color:#f3f3f3;
+	text-decoration:none;
+	font-weight:bold;
+	text-shadow:0 -1px 0 rgba(0,0,0,0.5);
+}*/
+
+#footer {
+	position:absolute; z-index:2;
+	bottom:0; left:0;
+	width:100%;
+	/*height:48px;*/
+	background-color:#222;
+	/*background-image:gradient(linear, 0 0, 0 100%, color-stop(0, #999), color-stop(0.02, #666), color-stop(1, #222));
+	background-image:linear-gradient(top, #999, #666 2%, #222);
+	background-image:-o-linear-gradient(top, #999, #666 2%, #222);*/
+	padding:0;
+	border-top:1px solid #444;
+}
+
+#wrapper {
+	position:absolute; z-index:1;
+	top:100px; bottom:48px; /*left:-9999px;*/
+	width:100%;
+	background:#aaa;
+	overflow:auto;
+}
+
+#scroller {
+	position:absolute; z-index:1;
+/*	-webkit-touch-callout:none;*/
+	tap-highlight-color:rgba(0,0,0,0);
+	width:100%;
+	padding:0;
+}
+
+#scroller ul {
+	list-style:none;
+	padding:0;
+	margin:0;
+	width:100%;
+	text-align:left;
+}
+
+/*#scroller li {
+	padding:0 10px;
+	height:40px;
+	line-height:40px;
+	border-bottom:1px solid #ccc;
+	border-top:1px solid #fff;
+	background-color:#fafafa;
+	font-size:14px;
+}*/
+
+#myFrame {
+	position:absolute;
+	top:0; left:0;
+}
+
+
+
+/**
+ *
+ * Pull down styles
+ *
+ */
+#pullDown, #pullUp {
+	background:#fff;
+	height:40px;
+	line-height:40px;
+	padding:5px 10px;
+	border-bottom:1px solid #ccc;
+	font-weight:bold;
+	font-size:14px;
+	color:#888;
+}
+#pullDown .pullDownIcon, #pullUp .pullUpIcon  {
+	display:block; float:left;
+	width:40px; height:40px;
+	background: url(img/logo.png) 0 0 no-repeat;
+	/*-webkit-background-size:40px 80px;*/ background-size:40px 40px;
+	transition-property:transform;
+	transition-duration:250ms;	
+}
+#pullDown .pullDownIcon {
+	transform:rotate(0deg) translateZ(0);
+}
+#pullUp .pullUpIcon  {
+	transform:rotate(-180deg) translateZ(0);
+}
+
+#pullDown.flip .pullDownIcon {
+	transform:rotate(-180deg) translateZ(0);
+}
+
+#pullUp.flip .pullUpIcon {
+	transform:rotate(0deg) translateZ(0);
+}
+
+#pullDown.loading .pullDownIcon, #pullUp.loading .pullUpIcon {
+	background-position:0 100%;
+	display: block;
+	float: left;
+	width: 40px;
+	height: 40px;
+	background: url(img/logo3.png) 0 0 no-repeat;
+	background-size: 40px 40px;
+	transform:rotate(0deg) translateZ(0);
+	transition-duration:0ms;
+
+	animation-name:loading;
+	animation-duration:2s;
+	animation-iteration-count:infinite;
+	animation-timing-function:linear;
+}
+
+@keyframes loading {
+	from { transform:rotate(0deg) translateZ(0); }
+	to {transform:rotate(720deg) translateZ(0); }
+}
+    #headNav{
+    	margin-top: -30px;
+    }
+    #footNav a{
+    	height: 25px;
+    	line-height: 25px;
+    }
+</style>
+</head>
+
+
+<body>
+	<!--用于变量控制-->
+	<input type="hidden" id="inputid" value="0" />
+	
+	<div id="" data-role = "page">
+	    <div id="" class="animsition" style="margin-top: -50px;">
+		    <div id="header" data-role = "header" data-position = "fixed" >
+	    		<!--<img style="height:30px;width: 30px;" src="meicons/com_home.png"/>-->
+	    		<h1>首页</h1>
+	    		
+	            <a href="" style=" width: 30px;height: 30px;padding: 0px 0px;border-radius: 10px;background-color: white;">
+	            	<img onclick="showhide()"  style="height: 30px;width: 30px;" 
+	            		src="meicons/com_home.png"/>
+	            </a>
+	            <a href="" data-role = "button" data-icon = "search" data-iconpos = "notext"></a>
+	
+				<div id="headNav" data-role = "navbar" >
+	            	   <ul>
+	                	   	<li><a href="" class="ui-btn ui-shadow ui-btn-icon-top ui-icon-myicon1 ui-btn-active ui-state-persist">首页</a></li>
+	                	   	<li><a href="members.html" class="ui-btn ui-shadow ui-btn-icon-top ui-icon-myicon2" data-ajax="false">it新秀</a></li>
+	                	   	<li><a href="" class="ui-btn ui-shadow ui-btn-icon-top ui-icon-myicon3">net战</a></li>
+	                	   	<li><a href="" class="ui-btn ui-shadow ui-btn-icon-top ui-icon-myicon4">about us</a></li>
+	            	   </ul>
+	            </div>
+		    </div>
+	    </div>
+	  
+		
+		<div id="wrapper" data-role = "content"  style="padding-left: 0px;padding-top: 0px;">
+			<div id="scroller">
+				<div id="pullDown" style="background: #DDD;">
+					<span class="pullDownIcon"></span><span class="pullDownLabel">Pull down to refresh...</span>
+				</div>
+				<div id="" class="animsition">
+					<ul id="thelist" data-role = "listview" >
+						<li data-role = "list-divider" style="background: #F3F3F3;">2015 October 7th,</li>
+						<li>
+							   <a href="detail-1.html"  data-transition="slide" data-ajax="false">
+							 	 	<img src="img/p1.jpg" class="essay" style="width: 160px;height: 160px;">
+							 	 	<h3>2015年最值得推荐的10个开源新秀项目</h3>
+							 	 	<p>【IT168 资讯】每年大家都能看到成千上万个新的开源项目启动，然而只有少数能够真正实施成功。</p>
+							   </a>
+						</li>
+						<li>   
+							   <a href="detail-2.html" data-transition="slide">
+							 	 	<img src="img/p2.jpg" class="essay" style="width: 160px;height: 160px;">
+							 	 	<h3>Oculus联合三星发布全新消费版GearVR 仅售99美元</h3>
+							 	 	<p>【IT168 资讯】每年大家都能看到成千上万个新的开源项目启动，然而只有少数能够真正实施成功。</p>
+							   </a>
+						</li>
+						<li>
+							  <a href="detail-1.html" data-transition="slide">
+							 	 	<img src="img/p3.jpg" class="essay" style="width: 160px;height: 160px;">
+							 	 	<h3>谷歌新Nexus手机并非与苹果iPhone6s竞争</h3>
+							 	 	<p>网易科技讯 9月25日消息，据美国媒体报道，新一代Nexus智能手机不会与苹果iPhone6s和Plus竞争，
+							 	 		理由如下。</p>
+							   </a>
+						</li>
+						<li>
+							   <a href="detail-1.html" data-transition="slide">
+							 	 	<img src="img/p4.jpg" class="essay" style="width: 160px;height: 160px;">
+							 	 	<h3>乐视电视三代面世 放弃强制捆绑会员政策</h3>
+							 	 	<p>网易科技讯 9月24日，乐视在港正式推出旗下第三代超极电视。据了解，
+							 	 	此次发布的产品分为三大旗舰六款第3代超级电视，并宣称低于量产成本定价。</p>
+							   </a>
+						</li>
+						<li>
+							  <a href="detail-1.html" data-transition="slide">
+							 	 	<img src="img/p5.jpg" class="essay" style="width: 160px;height: 160px;">
+							 	 	<h3>中美互联网论坛达多项协议：多企业与微软签约</h3>
+							 	 	<p>当地时间2015年9月23日，第八届中美互联网论坛在西雅图召开。
+							 	 		随着中国国家主席习近平抵达访美的首站——西雅图，。</p>
+							   </a>
+						</li>
+						<li>
+							<a href="detail-1.html" data-transition="slide">
+							 	 	<img src="img/p6.jpg" class="essay" style="width: 160px;height: 160px;">
+							 	 	<h3>特斯拉公布原型无人机：充电20分钟飞行1小时</h3>
+							 	 	<p>近日，特斯拉Tesla公布了原型无人机，不出意料，这款无人机果然不同凡响，一如特斯拉家的其它产品，颠覆了传统认知。</p>
+							   </a>
+						</li>
+						
+						
+					</ul>
+				</div>
+				<div id="pullUp">
+					<span class="pullUpIcon"></span><span class="pullUpLabel">Pull up to refresh...</span>
+				</div>
+			</div>
+		</div>
+		
+		<div id="footer" data-role = "footer" data-position = "fixed">
+			
+			<!--弹出部分内容部分div-->
+	       	<div id="plusdiv" style="display: none; position: absolute;top: -290px;
+	       						bottom: 65px; right: 0; width: 60%;border-right: 1px solid green;
+	       						background-color:lightgoldenrodyellow;">
+								
+			</div>
+			
+			<!--弹出部分内容部分div结束-->
+			
+		    <div id="" class="animsition">
+		    	<div id="footNav" data-role = "navbar">
+	        	   	<ul>
+	            	   	<li><a href="" class="ui-btn ui-shadow ui-btn-icon-left ui-icon-myicon5 aline ui-btn-active ui-state-persist" >综合</a></li>
+	            	   	<li><a href="talks1.html" class="ui-btn ui-shadow ui-btn-icon-left ui-icon-myicon6 aline" data-ajax="false">动态</a></li>
+	            	   	<li><a href="around.html" class="ui-btn ui-shadow ui-btn-icon-left ui-icon-myicon7 aline" data-ajax="false">发现</a></li>
+	            	   	<li><a href="personal.html"  data-ajax = "false" class=" ui-btn ui-shadow ui-btn-icon-left ui-icon-myicon8 aline">我</a></li>
+	        	   	</ul>
+        		</div>
+        	</div>
+		</div>
+	</div>
+
+	<!--导入弹出对应的js库文件开始部分-->
+	<script type="text/javascript">
+		function showhide() {
+			if ($("#inputid").val()!=0) {
+				$("#plusdiv").empty();
+				$("#plusdiv").hide('slow',function(){
+					$("#inputid").val(0)
+				});
+			} else{
+				//加载数据
+				$("#plusdiv").innerHTML=$.ajax({
+					url:"split/show.html",
+					type:"GET",
+					async:true,
+					cache:false,
+					success:function(html){
+						$("#plusdiv").empty();
+						$("#plusdiv").append(html);
+					}
+				});
+				$("#plusdiv").show('slow',function(){
+					$("#inputid").val(1)
+				});
+			}
+		}
+	</script>
+<!--导入弹出对应的js库文件结束部分-->
+</body>
+</html>

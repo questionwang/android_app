@@ -1,0 +1,57 @@
+ @charset "utf-8";
+            .ui-icon-myicon1:after{
+				background-image: url(../img/m1.png);
+				background-size: 30px 30px;
+				border-radius: 15px;
+			}
+			.ui-icon-myicon2:after{
+				background-image: url(../img/m2.png);
+				background-size: 30px 30px;
+				border-radius: 15px;
+			}
+			.ui-icon-myicon3:after{
+				background-image: url(../img/m3.png);
+				background-size: 30px 30px;
+				border-radius: 15px;
+			}
+			.ui-icon-myicon4:after{
+				background-image: url(../img/m4.png);
+				background-size: 30px 30px;
+				border-radius: 15px;
+			}
+			.ui-icon-myicon5:after{
+				background-image: url(../img/m5.png);
+				background-size: 30px 30px;
+				border-radius: 15px;
+			}
+			.ui-icon-myicon6:after{
+				background-image: url(../img/m6.png);
+				background-size: 30px 30px;
+				border-radius: 15px;
+			}
+			.ui-icon-myicon7:after{
+				background-image: url(../img/m7.png);
+				background-size: 30px 30px;
+				border-radius: 15px;
+			}
+			.ui-icon-myicon8:after{
+				background-image: url(../img/m8.png);
+				background-size: 30px 30px;  
+				border-radius: 15px;
+			}
+			.heart{
+            	width: 50px;
+				height: 50px;
+            	padding-top: 10px;
+	    		padding-left: 25px;
+	    		border-radius: 50%;
+            }
+            /*.aline{
+            	height: 25px;
+				text-align: center;
+				line-height: 25px;
+            }*/
+            .essay{
+            	width: 160px;
+            	height: 120px;
+            }

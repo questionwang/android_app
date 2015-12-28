@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/myicons.css"/>
+		<link rel="stylesheet" type="text/css" href="css/animsition.min.css"/>
+		<script src="js/jquery-2.1.4.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.animsition.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.mobile-1.4.5.min.js" type="text/javascript" charset="utf-8"></script>
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<meta charset="utf-8">
+			<style type="text/css">
+				#loadbox{
+					 width: 80px;
+					 height: 80px;
+					 margin: 0 auto;
+					 background: #DDD;
+					 margin-top: 10px;
+					 border-radius: 80px;;
+				}
+				#loadbox:hover{
+					background: #AAA;
+					border: 3px solid #0FF;
+				}
+			</style>
+		<title></title>
+		<script type="text/javascript">
+    	   $(document).ready(function() {
+   
+			  $(".animsition").animsition({
+			   
+			    inClass               :   'flip-in-x-fr',
+			    outClass              :   'flip-out-x-fr',
+			    inDuration            :    1500,
+			    outDuration           :    800,
+			    linkElement           :   '.animsition-link',
+			    // e.g. linkElement   :   'a:not([target="_blank"]):not([href^=#])'
+			    loading               :    true,
+			    loadingParentElement  :   'body', //animsition wrapper element
+			    loadingClass          :   'animsition-loading',
+			    unSupportCss          : [ 'animation-duration',
+			                              '-webkit-animation-duration',
+			                              '-o-animation-duration'
+			                            ],
+			    //"unSupportCss" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+			    //The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+			     
+			    overlay               :   false,
+			     
+			    overlayClass          :   'animsition-overlay-slide',
+			    overlayParentElement  :   'body'
+			  });
+			});            
+ </script>		
+	</head>
+	<body>
+		   <div id="me" data-role = "page">
+		   	        
+		   	        <div id="" data-role = "header" data-position = "fixed">
+		   	        	
+		   	        	 <div id="" class="animsition">
+		   	        	  <a href="com.html" data-ajax="false" data-role = "button" data-icon = "home" data-iconpos = "notext"></a> 
+                          <a href="" data-role = "button" data-icon = "search" data-iconpos = "notext" style="float: right;"></a>
+                          	
+                          <!--用户进入登陆界面的js转移事件开始-->
+                          <script type="text/javascript">
+                          	function tologin(){
+                          		window.location.href="login.html";
+                          	}
+                          </script>
+                          <!--用户进入登陆界面的js转移事件结束-->
+                          
+                          <div id="loadbox" style="background-image: url(meicons/me_nologin.jpg);" onclick="tologin()">
+                          </div>
+                          
+                          <div id="" onclick="tologin()" style=" text-align: center; height: 30px;">
+                          	       点击登录
+                          </div>                         
+		   	              </div>
+		   	         </div>
+		   	         
+		   	        <div id="" data-role = "content" >
+		   	        	   <div id="" class="animsition" >
+		   	        	   	     <ul data-role = "listview" >
+		   	        	   	     	<li><a href="" data-role = "button" >
+		   	        	   	     		<img src="meicons/me_message_.png" style="width: 30px;height: 30px;margin-top: 25px; margin-left: 15px;"/><span id="" style="display: inline-block; margin-top: 20px;margin-left: -20px;">消息</span>
+		   	        	   	     	</a>
+		   	        	   	     	</li>
+		   	        	   	     	<li><a href="" data-role = "button" >
+		   	        	   	     		<img src="meicons/me_note_.png" style="width: 30px;height: 30px;margin-top: 25px;margin-left: 15px;"/><span id="" style="display: inline-block; margin-top: 20px;margin-left: -20px;">便签</span>
+		   	        	   	     	</a></li>
+		   	        	   	     	<li><a href="" data-role = "button" >
+		   	        	   	     		<img src="meicons/me_boke_.png" style="width: 30px;height: 30px;margin-top: 25px;margin-left: 15px;"/><span id="" style="display: inline-block; margin-top: 20px;margin-left: -20px;">博客</span>
+		   	        	   	     	</a></li>
+		   	        	   	     	
+		   	        	   	     	<li><a href="" data-role = "button" >
+		   	        	   	     		<img src="meicons/me_team_.png" style="width: 30px;height: 30px;margin-top: 25px;margin-left: 15px;"/><span id="" style="display: inline-block; margin-top: 20px;margin-left: -20px;">团队</span>
+		   	        	   	     	</a></li>
+		   	        	   	     </ul>
+		   	        	   	     
+		   	        	   </div>
+		   	        </div>
+		   	        
+		   	        <div id="footer" data-role = "footer" data-position = "fixed">
+<!--功能菜单栏-->  
+			                <div id="" data-role = "navbar">
+			                	<div id="" class="animsition">
+			                	   <ul>
+				                	   	<li><a href="com.html" data-ajax="false" class="ui-btn ui-shadow ui-btn-icon-left ui-icon-myicon5 aline " >综合</a></li>
+				                	   	<li><a href="talks1.html" data-ajax="false" class="ui-btn ui-shadow ui-btn-icon-left ui-icon-myicon6 aline ">动态</a></li>	    
+				                	   	<li><a href="around.html" data-ajax="false" class="ui-btn ui-shadow ui-btn-icon-left ui-icon-myicon7 aline ">发现</a></li>
+				                	   	<li><a href="#" data-ajax="false" class="ui-btn ui-shadow ui-btn-icon-left ui-icon-myicon8 aline ui-icon-myicon6 ui-btn-active ui-state-persist aline">我</a></li>
+			                	   </ul>
+			                	 </div>  
+			                </div>
+			         </div>
+			         <div id="mepopup" style="width: 100%;height:100%;text-align: center;padding-top: 120px;background: #AAA;opacity: 0.6;" data-role = "popup">
+		   	             
+					   	          <div id="modify" style="margin-bottom: 10px;">
+					   	          	   <span id="" >
+					   	          	   	
+					   	          	   </span>
+					   	          	   <span id="">
+					   	          	   	
+					   	          	   </span>
+					   	          	   <span id="">
+					   	          	   	
+					   	          	   </span>
+					   	         
+					   </div>
+	</body>
+</html>
+

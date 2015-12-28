@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Swiper demo</title>
+    <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/animsition.min.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <script src="js/jquery-2.1.4.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/jquery.mobile-1.4.5.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/jquery.animsition.min.js" type="text/javascript" charset="utf-8"></script>
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="css/swiper.min.css">
+
+    <!-- Demo styles -->
+    <style>
+    html, body {
+        position: relative;
+        height: 100%;
+    }
+    body {
+        background: #fff;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        color:#000;
+        margin: 0;
+        padding: 0;
+        background-image: url(img/main.jpg);
+        background-size: 100% 100%;
+    }
+    .swiper-container {
+        width: 300px;
+        height: 300px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -150px;
+        margin-top: -150px;
+    }
+    .swiper-slide {
+        background-position: center;
+        background-size: cover;
+    }
+    #getIn{
+    	text-decoration: none;
+    	background: #AAA;
+    	background: rgba(0,0,0,0.2);
+    	opacity: 0;
+    	padding: 10px 20px;
+    	border-radius: 20px;
+    	transition-property: all;
+    	transition-duration: 0.5s;
+    }
+    #getInBox:hover #getIn{
+    	opacity: 1;
+    	border: 2px solid  #3FF;
+    	color: #FFF;
+    }
+    </style>
+    <script type="text/javascript">
+    	   $(document).ready(function() {
+   
+			  $(".animsition").animsition({
+			   
+			    inClass               :   'flip-in-x-fr',
+			    outClass              :   'flip-out-x-fr',
+			    inDuration            :    1500,
+			    outDuration           :    800,
+			    linkElement           :   '.animsition-link',
+			    // e.g. linkElement   :   'a:not([target="_blank"]):not([href^=#])'
+			    loading               :    true,
+			    loadingParentElement  :   'body', //animsition wrapper element
+			    loadingClass          :   'animsition-loading',
+			    unSupportCss          : [ 'animation-duration',
+			                              '-webkit-animation-duration',
+			                              '-o-animation-duration'
+			                            ],
+			    //"unSupportCss" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+			    //The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+			     
+			    overlay               :   false,
+			     
+			    overlayClass          :   'animsition-overlay-slide',
+			    overlayParentElement  :   'body'
+			  });
+			});            
+    </script>
+</head>
+<script type="text/javascript">
+	 $(document).ready(function(){
+	 	 $(".animsition")
+	 })
+</script>
+<body>
+<div id="" class="animsition" >
+	<audio src="jn.mp3" autoplay="autoplay" ></audio>	
+	<div id="" data-role = "page">
+		    <!-- Swiper -->
+	    <div class="swiper-container">
+	        <div class="swiper-wrapper">
+	            <div class="swiper-slide" style="background-image:url(img/open1.jpg);text-align: center;line-height: 300px;font-family: '楷体';color: #FFF;font-size: 16px;">
+			            <span id="" style="text-shadow: 1px 1px 1px #00FFFF;font-size: 18px;">
+			            	喜欢收藏感动，在每个唯美的瞬间...
+			            </span>
+	            </div>
+	            <div class="swiper-slide" style="background-image:url(img/open2.jpg);text-align: center;line-height: 300px;font-family: '楷体';color: #FFF;font-size: 16px;">
+	            	    <span id="" style="text-shadow: 1px 1px 1px #00FFFF;font-size: 18px;">
+			            	就像，坐在月亮下的某个瞬间...
+			            </span>
+	            </div>
+	            <div class="swiper-slide" style="background-image:url(img/open3.jpg);text-align: center;line-height: 300px;font-family: '楷体';color: #FFF;font-size: 16px;">
+	            	    <span id="" style="text-shadow: 1px 1px 1px #00FFFF;font-size: 18px;">
+			            	生命中的感动，都来自想念，...
+			            </span>
+	            </div>
+	            <div class="swiper-slide" style="background-image:url(img/open4.jpg);text-align: center;line-height: 300px;font-family: '楷体';color: #FFF;font-size: 16px;">
+	            	    <span id="" style="text-shadow: 1px 1px 1px #00FFFF;font-size: 18px;">
+			            	爱，真挚于给的无怨...
+			            </span>
+	            </div>
+	            <div class="swiper-slide" style="background-image:url(img/open5.jpg);text-align: center;line-height: 100px;font-family: '楷体';color: #FFF;font-size: 16px;">
+	                    <span id="" style=" text-shadow: 1px 1px 1px #00FFFF;font-size: 22px;">
+			            	因为爱it，所以我们开源...
+			            </span>
+			            <div id="getInBox" style="width: 100%;height: 30px;text-align: center;padding-top: 60px">
+			            	
+			            	<a id="getIn" href="com.html" data-ajax = "false" class="animsition-link">
+			            		<span id="enternow">进入开源世界</span>
+			            	</a>
+			            	
+			            </div>
+			            
+	            </div>
+	        </div>
+	       
+	    </div>
+	</div>
+</div>    
+
+    <!-- Swiper JS -->
+    <script src="js/swiper.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        effect: 'cube',
+        grabCursor: true,
+        cube: {
+            shadow: true,
+            slideShadows: true,
+            shadowOffset: 20,
+            shadowScale: 0.94
+        }
+    });
+    </script>
+</body>
+</html>

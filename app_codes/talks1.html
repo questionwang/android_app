@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/myicons.css"/>
+		<link rel="stylesheet" type="text/css" href="css/animsition.min.css"/>
+		<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+		<script src="js/jquery.animsition.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.mobile-1.4.5.min.js" type="text/javascript" charset="utf-8"></script>
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		 a{
+		 	text-decoration: none;
+		 }
+	</style>
+<script type="text/javascript">
+    	   $(document).ready(function() {
+   
+			  $(".animsition").animsition({
+			   
+			    inClass               :   'flip-in-x-fr',
+			    outClass              :   'flip-out-x-fr',
+			    inDuration            :    1500,
+			    outDuration           :    800,
+			    linkElement           :   '.animsition-link',
+			    // e.g. linkElement   :   'a:not([target="_blank"]):not([href^=#])'
+			    loading               :    true,
+			    loadingParentElement  :   'body', //animsition wrapper element
+			    loadingClass          :   'animsition-loading',
+			    unSupportCss          : [ 'animation-duration',
+			                              '-webkit-animation-duration',
+			                              '-o-animation-duration'
+			                            ],
+			    //"unSupportCss" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+			    //The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+			     
+			    overlay               :   false,
+			     
+			    overlayClass          :   'animsition-overlay-slide',
+			    overlayParentElement  :   'body'
+			  });
+			});            
+ </script>	
+	<body>
+		
+		<div id="found" data-role = "page">	
+<!--页眉开始-->  <div id="" class="animsition" style="margin-top: -80px;"> 		 
+			  <div id="" data-role = "header" data-position = "fixed">
+<!--工具栏-->
+                <h1>最新动弹</h1>
+                <a href="" data-role = "button" data-icon = "home" data-iconpos = "notext"></a> 
+                <a href="" data-role = "button" data-icon = "search" data-iconpos = "notext"></a>
+<!--导航栏-->			  	
+			  	<div data-role = "navbar">
+						<ul>
+							<li><a href="#" data-role = "button" class="ui-btn-active ui-state-persist">最新动弹</a></li>
+							<li><a href="talks2.html" data-role = "button" data-ajax="false">热门动弹</a></li>
+							<li><a href="" data-role = "button" data-transition = "turn">我的动弹</a></li>
+						</ul>
+			    </div>
+			  </div>
+<!--页眉结束-->	  </div>
+
+<!--主体-->    <div id="" class="animsition" style="margin-top: 80px;"> 
+              <div id="" data-role = "content">
+              	    <div id="" >
+              	         <ul data-role="listview";style="margin-left: 0;border: 1px solid red;" >
+             	         	
+               	         	<li> 
+               	         	    <img src="img/f1.png" class="heart"/>
+            					<h3><a href="#">龙牙hjs</a></h3> 							    
+								<span style="font-size: 12px;">好看嘛？好看不，好看嘛？</span>
+								<img src="img/f2.png" style="width: 100px;height: 100px;float: right;margin-right: 15%">
+							</li>
+			<!--热闻二-->							
+              	         	<li> 
+								<img src="img/f3.png" class="heart"/>
+            					<h3><a href="#">龙牙hjs</a></h3>
+								<p>这台搞开发流畅吗，能不能自己加内存</p> 
+							</li>
+							
+			<!--热闻三-->							
+							<li> 
+								<img src="img/f4.png" class="heart"/>
+            					<h3><a href="#">无糖咖啡</a></h3>
+								<p>收到提醒，升级win10，要不要升？</p> 
+							</li>
+							
+			<!--热闻四-->							
+							<li> 
+								<img src="img/f5.png" class="heart"/>
+            					<h3><a href="#">Broken Bells</a></h3>
+								<p>车坏了</p> 
+							</li>
+							
+			<!--热闻五-->							
+							<li> 
+								<img src="img/f6.jpg" class="heart"/>
+            					<h3><a href="#">Broken Bells</a></h3>
+								<p>车坏了</p> 
+							</li>
+              	         </ul>	 
+              	    </div>   
+              </div>
+	<!--主体结束-->  
+	</div>
+
+
+
+	<!--页脚开始-->
+         
+         <div id="footer" data-role = "footer" data-position = "fixed" >
+	<!--功能菜单栏-->  
+                <div id="" data-role = "navbar" >
+                	<div id="" class="animsition"> 
+                	   <ul>
+	                	   	<li><a href="com.html" data-ajax="false" class="ui-btn ui-shadow ui-btn-icon-left ui-icon-myicon5 aline " >综合</a></li>
+	                	   	<li><a href="" class="ui-btn ui-shadow ui-btn-icon-left ui-icon-myicon6 ui-btn-active ui-state-persist aline">动态</a></li>	         
+	                	   	<li><a href="around.html" data-ajax="false" class="ui-btn ui-shadow ui-btn-icon-left ui-icon-myicon7 aline ">发现</a></li>
+	                	   	<li><a href="personal.html" class="ui-btn ui-shadow ui-btn-icon-left ui-icon-myicon8 aline">我</a></li>
+                	   </ul>
+                </div>
+                <div id="" class="animsition" > 
+               <!--style="margin-top: 6px;"-->
+         	</div>
+        </div>
+	<!--页脚结束-->
+		</div>
+	</body>
+</html>
+

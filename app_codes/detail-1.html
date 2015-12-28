@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<title>detail-1</title>
+<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css"/>
+<link rel="stylesheet" type="text/css" href="css/animsition.min.css"/>
+<script src="js/jquery-2.1.4.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/jquery.mobile-1.4.5.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/jquery.animsition.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" src="js/iscroll.js"></script>
+<script type="text/javascript">
+var myScroll;
+
+function loaded () {
+	myScroll = new IScroll('#wrapper', {
+		mouseWheel: true,
+		indicators: [{
+			el: document.getElementById('starfield1'),
+			resize: false,
+			ignoreBoundaries: true,
+			speedRatioY: 0.4
+		}, {
+			el: document.getElementById('starfield2'),
+			resize: false,
+			ignoreBoundaries: true,
+			speedRatioY: 0.2
+		}]
+	});
+}
+
+document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+
+</script>
+<script type="text/javascript">
+    	   $(document).ready(function() {
+   
+			  $(".animsition").animsition({
+			   
+			    inClass               :   'zoom-in-sm',
+			    outClass              :   'zom-out-sm',
+			    inDuration            :    1500,
+			    outDuration           :    800,
+			    linkElement           :   '.animsition-link',
+			    // e.g. linkElement   :   'a:not([target="_blank"]):not([href^=#])'
+			    loading               :    true,
+			    loadingParentElement  :   'body', //animsition wrapper element
+			    loadingClass          :   'animsition-loading',
+			    unSupportCss          : [ 'animation-duration',
+			                              '-webkit-animation-duration',
+			                              '-o-animation-duration'
+			                            ],
+			    //"unSupportCss" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+			    //The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+			     
+			    overlay               :   false,
+			     
+			    overlayClass          :   'animsition-overlay-slide',
+			    overlayParentElement  :   'body'
+			  });
+			});            
+ </script>
+<style type="text/css">
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html {
+	-ms-touch-action: none;
+}
+
+body,ul,li {
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+
+body {
+	font-size: 12px;
+	font-family: ubuntu, helvetica, arial;
+	overflow: hidden; /* this is important to prevent the whole page to bounce */
+	background: #000;
+}
+
+#wrapper {
+	position: absolute;
+	z-index: 3;
+	width: 100%;
+	top:0;
+	bottom: 0;
+	left: 0;
+	overflow: hidden;
+}
+
+#scroller {
+	position: absolute;
+	z-index: 3;
+	width: 100%;
+	height: 2000px;
+	overflow: hidden;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	-webkit-transform: translateZ(0);
+	-moz-transform: translateZ(0);
+	-ms-transform: translateZ(0);
+	-o-transform: translateZ(0);
+	transform: translateZ(0);
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-text-size-adjust: none;
+	-moz-text-size-adjust: none;
+	-ms-text-size-adjust: none;
+	-o-text-size-adjust: none;
+	text-size-adjust: none;
+	background: url(img/galaxies1.png);
+}
+
+.starfield {
+	position: absolute;
+	width: 100%;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	overflow: hidden;
+}
+
+.starfield div {
+	position: absolute;
+	width: 100%;
+	overflow: hidden;
+	-webkit-transform: translateZ(0);
+	-moz-transform: translateZ(0);
+	-ms-transform: translateZ(0);
+	-o-transform: translateZ(0);
+	transform: translateZ(0);
+}
+
+#starfield1 {
+	z-index: 2;
+}
+
+#stars1 {
+	z-index: 2;
+	height: 3000px;
+	background: url(img/galaxies2.png);
+}
+
+#starfield2 {
+	z-index: 1;
+}
+
+#stars2 {
+	z-index: 1;
+	height: 2000px;
+	background: url(img/stars.jpg);
+}
+p{
+	margin-top: 60px;
+}
+</style>
+</head>
+<body onload="loaded()">
+<div id="" data-role = "page">
+	  
+	            
+	  <div id="wrapper">	  	   
+			<div id="scroller" style="color: #FFF;">
+				  <div id="" class="animsition"> 
+				  <div id="" data-role = "header" style="border: none;">
+			                <a href="com.html" data-ajax="false" data-role = "button" data-icon = "home" data-iconpos = "notext"></a> 
+			                <a href="" data-role = "button" data-icon = "search" data-iconpos = "notext"></a>
+				  </div>
+				  </div>
+				  <div id="" class="animsition" style="margin-top: 50px;">
+				  <div id="" style="width: 90%; height: 80%;background: silver;margin: 0 auto; text-align: center;background: rgba(0,0,0,0.2);">
+				  	    <h2 style="padding-top: 20px;">2015年最值得推荐的10个开源新秀项目</h2>
+				  	    <p style="margin-top: 30px;">
+				 	 		【IT168 资讯】每年大家都能看到成千上万个新的开源项目启动，然而只有少数能够真正实施成功。
+				 	 		其中一些项目在现有核心技术基础上有了新的推进，另一些在新的领域也有了很大突破。对于多数
+				 	 		开源项目来说，其目的都在于处理并解决简单的开发问题，部分开源项目意在与世界各地志同道合
+				 	 		的开发者共享信息和资源。
+				 	 	</p>
+				  	    <img src="img/p1.jpg" style="width: 90%;height: 180px;margin: 0 auto;display: block;opacity: 0.7;margin-top: 60px;"/>
+				  	    <p>
+				  	    	开源已经成为了行业创新的发动机。docker今年新增的相关项目战胜了其他新秀项目—
+			 	 			—然而，并非巧合的是，这在总体上反映了企业技术的最令人兴奋的部分。云数据存储的反
+			 	 			对者担心成本效率和漏洞攻击。为了解决这两个问题，storj就是一个私有云存储市场，
+			 	 			在这用户可以通过storjcoin (SJCX) 购买并交易空间。上传到storj的文
+			 	 			件会被粉碎、加密和存储到整个社区。只有文件所有者，拥有这些密钥加密的信息
+				  	    </p>
+				  	    <p>
+				  	    	debops始创于波兰的一个大学校园里，在那一切都是手工配置的，并独立运行自己的数据
+				 	 		 中心。有时候遇到系统崩溃而导致几天的宕机，dlmanowski意识到需要一个配置管理系
+				 	 		 统。基于debian，debops是一组配置整个数据基础设施ansible方案。此项目已经
+				 	 		  在许多不同的工作环境下实现。
+				  	    </p>
+				  	    <img src="img/d1.jpg" style="width: 90%;height: 180px;margin: 0 auto;display: block;opacity: 0.7;margin-top: 60px;"/>
+				  	    <p>
+				  	    	 传统的手写学习方式对技术学科来说已经远远不足。然而，游戏大都是有关参与者——这就是
+				 	 		  为什么codecombat的创始人开始创建一个多人编程游戏来教大家如何编写代码，玩游
+				 	 		  戏也可以学编程。目前，codecombat游戏全面开源，它三一款多人编码游戏，该款游
+				 	 		  戏的任务就是教会大家如何编程，并通过游戏来提升开发水平。
+				  	    </p>
+				  	    <p>
+				  	    	 开源已经成为了行业创新的发动机。docker今年新增的相关项目战胜了其他新秀项目——然而
+				 	 		 基于这个灵感，CodeCombat最初仅仅是一个创业想法，但其创始人决定创建一个开源项目。
+				 	 		 此想法在社区得到广大认可，并快速得到项目贡献者的支持。仅仅两个月后，这款游戏就被收入
+				 	 		Google’s Summer of Code，并拥有45种语言版本和大量玩家。CodeCombat
+				 	 		希望成为那些想要边学习代码的同时获得乐趣的风向标。
+				  	    </p>
+				  	    <p>
+				  	    	 传统的手写学习方式对技术学科来说已经远远不足。然而，游戏大都是有关参与者——这就是
+				 	 		  为什么codecombat的创始人开始创建一个多人编程游戏来教大家如何编写代码，玩游
+				 	 		  戏也可以学编程。目前，codecombat游戏全面开源，它三一款多人编码游戏，该款游
+				 	 		  戏的任务就是教会大家如何编程，并通过游戏来提升开发水平。
+				  	    </p>
+				  	    <p>
+				  	    	 开源已经成为了行业创新的发动机。docker今年新增的相关项目战胜了其他新秀项目——然而
+				 	 		 基于这个灵感，CodeCombat最初仅仅是一个创业想法，但其创始人决定创建一个开源项目。
+				 	 		 此想法在社区得到广大认可，并快速得到项目贡献者的支持。仅仅两个月后，这款游戏就被收入
+				 	 		Google’s Summer of Code，并拥有45种语言版本和大量玩家。CodeCombat
+				 	 		希望成为那些想要边学习代码的同时获得乐趣的风向标。
+				  	    </p>
+				  </div>
+				 </div> 
+			</div>
+		</div>
+		
+		<div class="starfield" id="starfield1">
+			<div id="stars1"></div>
+		</div>
+		
+		<div class="starfield" id="starfield2">
+			<div id="stars2"></div>
+		</div>
+</div>
+</body>
+</html>

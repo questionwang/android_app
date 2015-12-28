@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="css/myicons.css"/>
+		<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/animsition.min.css"/>
+		<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+		<script src="js/jquery.animsition.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title></title>
+		<style type="text/css">
+		*{
+		    	margin: 0;
+		    	padding: 0;
+		    }
+			
+			}
+			#content ul li a{
+				display: block;
+				float: left;
+				margin-left: 100px;
+			}
+			.ui-icon-myicon301:after{
+				background-image:url("meicons/find_goodcircle.png");
+				background-size: 20px 20px;
+				border-radius: 10px;
+				background-color: white;
+			}
+			
+			.ui-icon-myicon302:after{
+				background-image:url("meicons/find_people_green.png") ;
+				background-size: 20px 20px;
+				border-radius: 10px;
+				background-color: white;
+				
+			}
+			.ui-icon-myicon303:after{
+				background-image:url("img/303.png") ;
+				background-size: 40px 40px;
+				border-radius: 10px;
+				background-color: white;
+			}
+			.ui-icon-myicon304:after{
+				background-image:url("meicons/find_scan_.png") ;
+				background-size: 20px 20px;
+				border-radius: 10px;
+				background-color: white;
+			}
+			.ui-icon-myicon305:after{
+				background-image:url("meicons/find_shake_.png") ;
+				background-size: 20px 20px;
+				border-radius: 10px;
+				background-color: white;
+			}
+			/*#header{
+				background-color:black;
+			}
+			#header h1{
+				color: white;
+			}*/
+			</style>
+<script type="text/javascript">
+    	   $(document).ready(function() {
+   
+			  $(".animsition").animsition({
+			   
+			    inClass               :   'flip-in-x-fr',
+			    outClass              :   'flip-out-x-fr',
+			    inDuration            :    1500,
+			    outDuration           :    800,
+			    linkElement           :   '.animsition-link',
+			    // e.g. linkElement   :   'a:not([target="_blank"]):not([href^=#])'
+			    loading               :    true,
+			    loadingParentElement  :   'body', //animsition wrapper element
+			    loadingClass          :   'animsition-loading',
+			    unSupportCss          : [ 'animation-duration',
+			                              '-webkit-animation-duration',
+			                              '-o-animation-duration'
+			                            ],
+			    //"unSupportCss" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+			    //The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+			     
+			    overlay               :   false,
+			     
+			    overlayClass          :   'animsition-overlay-slide',
+			    overlayParentElement  :   'body'
+			  });
+			});            
+ </script>				
+	</head>
+	<body>
+		
+		<div id="firstpage" data-role = "page">
+			<div id="" class="animsition" style="margin-top:-45px;">
+				<div id="" data-role = "header" data-position = "fixed">
+					   <h1>发现</h1>
+					   <a href="com.html" data-ajax="false" data-role = "button" data-icon = "home" data-iconpos = "notext"></a> 
+	                   <a href="" data-role = "button" data-icon = "search" data-iconpos = "notext"></a>
+				</div>
+			</div>
+		    <div id="content" data-role = "content">
+		     	<div id="" class="animsition" >
+	                <ul data-role="listview" style="margin-top: 80px;">
+	                	
+		                <li style="border-bottom: 1px solid green;"><a href="#" class="ui-btn ui-shadow ui-btn-icon-left ui-icon-myicon301">好友圈</a></li>
+		                
+		                <li  data-role="list-divider"></li>
+		                <li style="margin-top: 15px;"><a href="#" class="ui-btn ui-shadow ui-btn-icon-left ui-icon-myicon302">找人</a></li>
+		                <li style="border-bottom: 1px solid green;"><a href="#" class="ui-btn ui-shadow ui-btn-icon-left ui-icon-myicon303">活动</a></li>
+		                
+		                <li data-role="list-divider"></li>
+		                <li style="margin-top: 15px;"><a href="#" class="ui-btn ui-shadow ui-btn-icon-left ui-icon-myicon304" >扫一扫</a></li>
+		                <li style="border-bottom: 2px solid green;"><a href="#" class="ui-btn ui-shadow ui-btn-icon-left ui-icon-myicon305">摇一摇</a></li>
+	                </ul>
+               	</div>
+		    </div>
+		 	<div id="footer" data-role = "footer" data-position = "fixed">
+<!--功能菜单栏-->  
+                <div id="" data-role = "navbar">
+                	<div id="" class="animsition">
+                	   <ul>
+	                	   	<li><a href="com.html" data-ajax="false" class="ui-btn ui-shadow ui-btn-icon-left ui-icon-myicon5 aline " >综合</a></li>
+	                	   	<li><a href="talks1.html" data-ajax="false" class="ui-btn ui-shadow ui-btn-icon-left ui-icon-myicon6 aline">动态</a></li>	         
+	                	   	<li><a href="#" class="ui-btn ui-shadow ui-btn-icon-left ui-icon-myicon7 aline ui-btn-active ui-state-persist">发现</a></li>
+	                	   	<li><a href="personal.html" data-ajax="false" class="ui-btn ui-shadow ui-btn-icon-left ui-icon-myicon8 aline">我</a></li>
+                	   </ul>
+                	 </div>  
+                </div>
+        	</div>
+		</div> 
+	</body>
+	<!--data-ajax="false" -->
+</html>
+

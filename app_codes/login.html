@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>学生登陆</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+    <script style="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <script style="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
+    <style type="text/css">
+    	img{
+    		height: 30px;
+    		width: 30px;
+    	}
+    </style>
+</head>
+<body>
+	<script type="text/javascript">
+		function bk(){
+	            window.location.href="personal.html";               
+	    }
+		
+	</script>
+	
+    <div data-role="page">
+        <div data-role="content" style="padding:0px 0px;">
+            <div class="ui-field-contain" style="border-left: 1px solid green;padding-left: 13px;margin-top: 40px;margin-left: 8%;margin-right: 10%;">
+	            <form action="http://localhost/stumanagerOS/ajaxDemo/server.php" method="post" enctype="application/x-www-form-urlencoded">
+		            <input type="text" id="username"  class="in" name="name" placeholder="your name">
+		            <input type="password" id="passwd" class="in" name="pass" placeholder="you pass" >
+	                <div><img src="meicons/login_fire.png"/><input  type="submit" value="点火" id="loginbtn" /> 	</div>
+	                <div><img style="margin: auto 45%;" src="meicons/login_reset.png"/><input type="reset" value="归零" onclick="tozero()" /></div>
+					<div><img style="margin-left: 85%;" src="meicons/login_back_.png"/><input onclick="bk()" type="button" value="返回"/></div>
+	       		</form>
+            </div>
+        </div>
+        <script type="text/javascript">
+        	
+			$("#username").blur(function(){
+				var namevalue=$("#username").val();
+//      		var re=/^[a-z0-9_]{3,16}$/;这种方式没理解
+        		var re=/[^A-Za-z0-9_]/i;//这种方式理解了但是还没有限制长度
+				var regexps=new RegExp(re); 
+				if (namevalue.match(regexps)) {
+					$(this).css({"color":"red"})
+					$(this).val('你的用户名不合法')
+					$(this).focusin(function(){
+						$(this).val('')
+						$(this).css({"color":"black"})
+					})
+					
+					
+				} else if($("#username").val().length>0){
+					
+					if($("#username").val().length>=3){
+						var request;
+						if(window.ActiveXObject){
+							request=new ActiveXObject('Microsoft.XMLHTTP')
+						}else if(window.XMLHttpRequest){
+							request=new XMLHttpRequest();
+						}
+						var data="name="+$("#username").val();
+						url="http://localhost/stumanagerOS/ajaxDemo/server.php?"+data;
+						request.open("GET",url);
+//						request.send(data);
+						request.onreadystatechange=function(){
+							if(request.readyState===4){
+								if(request.status===200){
+									$("#username").val(request.responseText);
+									alert(request.responseType);
+								}else{
+									alert("发生错误"+request.status);
+								}
+							}
+						}
+					}else{
+						$(this).css({"color":"red"})
+						$(this).val('你的用户名长度不够')
+						$(this).focusin(function(){
+							$(this).val('')
+							$(this).css({"color":"black"})
+						})
+					}
+				}
+			})
+			//						$.ajax({
+//							type:"post",
+//							url:"http://localhost/stumanagerOS/ajaxDemo/server.php",
+//							data:{name:namevalue},
+//							dataType:"json",
+//							async:true,
+//							cache:false,
+//							success:function(data){
+//								console.log(this);
+//							}
+//						});
+
+//					$.ajax({
+//						type:"POST",
+//						url:"http://localhost/stumanagerOS/ajaxDemo/server.php",
+//						data:{name:namevalue},
+//						dataType:"json",
+////						url:"www.debugcode.cn/mydemo/inlogin.php",
+//						async:true,
+//						cache:false,
+//						
+//					});
+						
+//					var url="http://localhost/stumanagerOS/ajaxDemo/server.php",
+//					var data={name:namevalue},
+//					
+//					$.post(url,data,function(){
+//						alert(ok);
+//					})
+
+
+//						$.post(url,data,function(){
+//							console.log('hi,ok');
+//						},"json");
+
+
+//						$.post(url,{name:namevalue},function(data){
+////							$("#username").val(data.length);
+//							alert(data.name);
+//						},"json");
+						
+//				if(1){
+//					alert(typeof(namevalue))
+					
+//					在这里先进行账户存在性验证，再验证密码
+//					如果验证成功就返回（通过ajax技术返回数据）
+//					一个用户状态码（标记用户已经处于登录状态）
+
+//					$("#loginbtn").click(function(){
+//						var request=new XMLHttpRequest();
+//						url="http://localhost/stumanagerOS/ajaxDemo/server.php";
+//						var data="name="+namevalue;
+//
+//						request.open("POST",url);
+//						request.send(data);
+//						request.onreadystatechange=function(){
+//							if(request.readyState===4){
+//								if(request.status===200){
+//									$("#username").val(request.responseText);
+//									alert(request.responseType);
+//								}else{
+//									alert("发生错误"+request.status);
+//								}
+//							}
+//						}
+//					})
+//
+//					
+//				}
+//				else{
+//					if($("#username").val().length>0){
+//						$(this).css({"color":"red"})
+//						$(this).val('你的用户名不合法')
+//						$(this).focusin(function(){
+//							$(this).val('')
+//							$(this).css({"color":"black"})
+//						})
+//					}
+//				}
+						
+		</script>
+    </div>
+</body>
+</html>
