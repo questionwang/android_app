@@ -1,0 +1,2 @@
+# android_app
+一个模仿开源中国手机app做的android端的手机app
